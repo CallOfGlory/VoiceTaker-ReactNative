@@ -1,13 +1,16 @@
 {
   "expo": {
-    "name": "_scaffold_tmp",
-    "slug": "_scaffold_tmp",
+    "name": "VoiceNotes",
+    "slug": "voicenotes-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "VoiceNotes потребує доступ до мікрофона для запису голосових нотаток."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +19,22 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "VoiceNotes потребує доступ до мікрофона для запису голосових нотаток."
+        }
+      ],
+      "expo-sharing"
+    ]
   }
 }
